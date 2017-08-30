@@ -193,7 +193,7 @@ class Barbarian(ClosePlayer):
         self.damage_low = damage_low
         self.damage_high = damage_high
 
-    def special(self, defender, choose_name, choose_name2):
+    def special(self, defender, choose_name):
         """If the Barbarian's health is under 30, damage_low += 10 and damage_high += 15."""
         if self.health <= 30:
             self.damage_low += 10
@@ -216,7 +216,7 @@ class Wizard(FarPlayer):
         self.damage_low = damage_low
         self.damage_high = damage_high
 
-    def special(self, defender, choose_name, choose_name2):
+    def special(self, defender, choose_name):
         """If the Wizard's health is under 20, opponent is hurt 15 points."""
         if self.health <= 20:
             defender.health -= 15
@@ -240,7 +240,7 @@ class Bishop(FarPlayer):
         self.damage_low = damage_low
         self.damage_high = damage_high
 
-    def special(self, defender, choose_name, choose_name2):
+    def special(self, defender, choose_name):
         """If the Bishop's health is under 35, heal 15 points."""
         if self.health <= 35:
             self.health += 30
@@ -263,18 +263,19 @@ class Noble(ClosePlayer):
         self.damage_low = damage_low
         self.damage_high = damage_high
 
-    def special(self, defender, choose_name, choose_name2):
+    def special(self, defender, choose_name):
         """If the Noble's health is under 25, rage is raised 5 points and opponent is dealt 10 damage."""
         if self.health <= 25:
             self.rage += 5
             defender.health -= 10
             print(
-                stylize('\n-' + choose_name +
-                        ': "Heroes Never Die!"\n\nHigh Birth has activated!\n'
-                        + choose_name +
-                        '\'s retainer charges in and attacks!\n' + choose_name
-                        + '\'s Rage raised 5 points and ' + choose_name2 +
-                        ' was dealt 10 damage!\n', fg("magenta")))
+                stylize(
+                    '\n-' + choose_name +
+                    ': "Heroes Never Die!"\n\nHigh Birth has activated!\n' +
+                    choose_name + '\'s retainer charges in and attacks!\n' +
+                    choose_name +
+                    '\'s Rage raised 5 points!\nThe opponent was dealt 10 damage!\n',
+                    fg("magenta")))
 
 
 class Cavalier(ClosePlayer):
@@ -288,7 +289,7 @@ class Cavalier(ClosePlayer):
         self.damage_low = damage_low
         self.damage_high = damage_high
 
-    def special(self, defender, choose_name, choose_name2):
+    def special(self, defender, choose_name):
         """If the Cavalier's health is under 30, use an item and heal 10 points, and rage is increased by 10."""
         if self.health <= 30:
             self.health += 10
@@ -313,7 +314,7 @@ class General(ClosePlayer):
         self.damage_low = damage_low
         self.damage_high = damage_high
 
-    def special(self, defender, choose_name, choose_name2):
+    def special(self, defender, choose_name):
         """If the General's health is under 20, damage_high += 10 and opponent is dealt 10 damage."""
         if self.health <= 20:
             self.damage_high += 10
@@ -324,8 +325,8 @@ class General(ClosePlayer):
                     ': "I\'m through playing around!"\n\nPiercing Blows has activated!\n'
                     + choose_name +
                     ' reveals a hidden mace and swings it with deadly precision!\n'
-                    + choose_name + '\'s High Atk raised 10 points!\n' +
-                    choose_name2 + ' lost 10 health!\n',
+                    + choose_name +
+                    '\'s High Atk raised 10 points!\nThe opponent lost 10 health!\n',
                     fg("dark_slate_gray_2")))
 
 
@@ -340,7 +341,7 @@ class Valkyrie(ClosePlayer):
         self.damage_low = damage_low
         self.damage_high = damage_high
 
-    def special(self, defender, choose_name, choose_name2):
+    def special(self, defender, choose_name):
         """If the Valkyrie's health is under 30, rage is increased by 10 points and harms the opponent by 5 points."""
         if self.health <= 30:
             self.rage += 10
@@ -349,8 +350,9 @@ class Valkyrie(ClosePlayer):
                 stylize(
                     '\n-' + choose_name +
                     ': "Now I\'m angry!"\n\nShrieking War Cry is activated!\n'
-                    + choose_name + '\'s Rage is raised 10 points!\n' +
-                    choose_name2 + ' lost 5 health!\n', fg("light_yellow")))
+                    + choose_name +
+                    '\'s Rage is raised 10 points!\nThe opponent lost 5 health!\n',
+                    fg("light_yellow")))
 
 
 class Assassin(ClosePlayer):
@@ -364,16 +366,17 @@ class Assassin(ClosePlayer):
         self.damage_low = damage_low
         self.damage_high = damage_high
 
-    def special(self, defender, choose_name, choose_name2):
+    def special(self, defender, choose_name):
         """If the Assassin's health is under 10, opponent is hurt by 20."""
         if self.health <= 10:
             defender.health -= 20
             print(
-                stylize('\n-' + choose_name +
-                        ': "Accept your fate."\n\nSwift Kill is activated!\n' +
-                        choose_name +
-                        '\'s Killing Edge shines brightly in the shadows!\n' +
-                        choose_name2 + ' lost 20 health!\n', fg("red_3a")))
+                stylize(
+                    '\n-' + choose_name +
+                    ': "Accept your fate."\n\nSwift Kill is activated!\n' +
+                    choose_name +
+                    '\'s Killing Edge shines brightly in the shadows!\nThe opponent lost 20 health!\n',
+                    fg("red_3a")))
 
 
 class Troubadour(FarPlayer):
@@ -387,7 +390,7 @@ class Troubadour(FarPlayer):
         self.damage_low = damage_low
         self.damage_high = damage_high
 
-    def special(self, defender, choose_name, choose_name2):
+    def special(self, defender, choose_name):
         """If the Troubadour's health is under 25, opponent is dealt 10 damage and damage_high += 10."""
         if self.health <= 25:
             self.damage_high += 10
@@ -396,8 +399,8 @@ class Troubadour(FarPlayer):
                 stylize(
                     '\n-' + choose_name +
                     ': "I\'m tired of being pushed around! This ends now!"\n\nSick Of It has activated!\n'
-                    + choose_name + '\'s High Atk raised 10 points!\n'
-                    + choose_name2 + ' lost 10 health!\n',
+                    + choose_name +
+                    '\'s High Atk raised 10 points!\nThe opponent lost 10 health!\n',
                     fg("deep_sky_blue_2")))
 
 
@@ -412,7 +415,7 @@ class Dragonmaster(ClosePlayer):
         self.damage_low = damage_low
         self.damage_high = damage_high
 
-    def special(self, defender, choose_name, choose_name2):
+    def special(self, defender, choose_name):
         """If the Dragonmaster's health is under 20, Rage += 5 and opponent is dealt 15 damage."""
         if self.health <= 20:
             self.rage += 5
@@ -421,5 +424,5 @@ class Dragonmaster(ClosePlayer):
                 '\n-' + choose_name +
                 ': "No retreat! No surrender!"\n\nSearing Spear is activated!\n'
                 + choose_name + '\'s dragon sets fire to the spear!\n' +
-                choose_name + '\'s Rage is raised 5 points!\n' + choose_name2 +
-                ' lost 15 health!\n')
+                choose_name +
+                '\'s Rage is raised 5 points!\nThe opponent lost 15 health!\n')

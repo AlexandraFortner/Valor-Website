@@ -54,7 +54,7 @@ def menu(Gladiator_1, Gladiator_2, turn, choose_name, choose_name1,
             name = str(attacker.getName()) + ':'
             choose_name = choose_name2
             name_choose = choose_name1
-        attacker.special(defender, choose_name, choose_name2)
+        attacker.special(defender, choose_name)
         if Gladiator_1.is_dead() == True:
             display_current_information(Gladiator_1, Gladiator_2, choose_name1,
                                         choose_name2)
