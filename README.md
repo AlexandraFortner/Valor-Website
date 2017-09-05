@@ -1,59 +1,99 @@
-# Gladiators!
+# Valor!
 
-For this assignment, you will create a gladiator combat game.
-The gladiators will take turns bludgeoning each other until one loses.
 
-# Implementation Details
+In this turn-based strategy game, you can choose between
+ten different classes to play with:
 
-## Core
+#### Class Example:
 
-Your gladiators will be implemented as a dictionary with 4 key-value pairs:
+        1. Barbarian
+        2. Wizard
+        3. Bishop
+        4. Noble
+        5. Cavalier
+        6. General
+        7. Valkyrie
+        8. Assassin
+        9. Troubadour
+        10. Dragonmaster
 
-- health : an integer between 0 and 100
-- rage : an integer between 0 and 100
-- damage_low : an integer
-- damage_high : an integer
 
-You will define the following functions in `core.py` (*and test them in `test_core.py`!*):
+## When Playing:
 
-```python
-def new_gladiator(health, rage, damage_low, damage_high):
-```
+- It will ask you for a name for Player 1.
 
-Returns the dictionary representing the gladiator with the provided values.
+#### Select Your Name Example(Player 1):
 
-```python
-def attack(attacker, defender):
-```
+        What is your name, Player 1?
 
-- Each attack can hit normally or crit
-- Crit chance is the same as the attacker's rage (50 rage == 50% crit chance)
-- Damage dealt is a random integer between the attacker's damage\_low and damage\_high
-- Critting doubles damage dealt
-- If a gladiator crits, their rage is reset to 0
-- If the gladiator hits normally, their rage is increased by 15
+        -
 
-```python
-def heal(gladiator):
-```
+- After you've given a name, it will then ask you what class Player 1 would like to be, including the special features.
 
-- Spends 10 rage to heal 5 health
-- Cannot heal above max health of 100
+#### Select Your Class Example:
 
-```python
-def is_dead(gladiator):
-```
+        Select your class, Player 1!
 
-- Returns True if gladiator has no health
+                1. Barbarian
+                2. Wizard
+                3. Bishop
+                4. Noble
+                5. Cavalier
+                6. General
+                7. Valkyrie
+                8. Assassin
+                9. Troubadour
+                10. Dragonmaster
 
-## Shell
+                Extra Features:
+                11. Description of Classes.
+                Q. Quit.
 
-Use the functions you've created in `core.py` to build the shell for actually doing the fighting.
+(It loops when you choose a class, only for Player 2 this time.)
 
-## Disk
+- Number 11, Description of Classes, include a small narrative about the class, including a description of their "Special".
 
-No disk interaction is required for this assignment.
+#### "Special" example(For Barbarian):
 
-# Example Output
+        Name of Special: Warrior's Spirit
+        Triggered: When Health is under 30
+        Effect: Low Atk is raised 10 points and High Atk is raised 15 points.
 
-![Example Output](./example_output.png)
+- After choosing a name and class for both players, the specialized menu is called.
+
+#### Combat Menu Example(For Player 1 - Alex):
+
+        Alex||| Class: Cavalier ||| 100 Health ||| 0 Rage/Magic
+        Sara||| Class: Wizard ||| 100 Health ||| 10 Rage/Magic
+
+        ~~~~~~~~~~~~~~~~~~~~~~~~
+        Alex | Cavalier:
+        ~~~~~~~~~~~~~~~~~~~~~~~~
+
+        What would you like to do?
+        -1.Attack:			0 Rage Required.
+        -2.Apothecary's Satchel:	10 Rage Required.
+        -3.Pass:			0 Rage Required.
+        -4.Pain Pack:	        20 Rage Required.
+        -5.Quit
+
+- Classes that attack with weapons: Barbarian, Noble, Cavalier, General, Valkyrie, Assassin, Dragonmaster, the menu above is shown, with Attack and Apothecary's Satchel.
+
+- Classes that attack with magic: Wizard, Bishop, Troubadour, the menu below (in the example) is shown, with Cast Spell and Heal.
+
+#### Combat Menu Example(For Player 2 - Sara):
+
+        Alex||| Class: Cavalier ||| 100 Health ||| 15 Rage/Magic
+        Sara||| Class: Wizard ||| 83 Health ||| 10 Rage/Magic
+
+        ~~~~~~~~~~~~~~~~~~~~~~~~
+        Sara | Wizard:
+        ~~~~~~~~~~~~~~~~~~~~~~~~
+        What would you like to do?
+        -1.Cast Spell:			0 Magic Required.
+        -2.Heal:			        10 Magic Required.
+        -3.Pass:			        0 Magic Required.
+        -4.Pain Pack:			20 Magic Required.
+        -5.Quit
+
+- The game is continued until a winner is announced or you quit the game.
