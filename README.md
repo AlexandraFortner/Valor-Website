@@ -96,4 +96,18 @@ ten different classes to play with:
         -4.Pain Pack:			20 Magic Required.
         -5.Quit
 
-- The game is continued until a winner is announced or you quit the game.
+- The game is continued until a winner is announced:
+
+        Sara has cast Holy Water Spring!
+        IT'S SUPER EFFECTIVE!
+        Alex lost 72 health!
+
+        Alex||| Class: Cavalier ||| 0 Health ||| 35 Rage/Magic
+        Sara||| Class: Wizard ||| 14 Health ||| 70 Rage/Magic
+
+
+
+- or you quit the game:
+
+        Alex: SURVIVED!
+        Sara: SURVIVED!
