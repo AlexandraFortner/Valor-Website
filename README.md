@@ -96,6 +96,11 @@ ten different classes to play with:
         -4.Pain Pack:			20 Magic Required.
         -5.Quit
 
+- Descriptions of Inventory Items:
+
+        Pain Pack: Inventory that can harm the opponent.
+        Apothecary's Satchel: Can heal the user.
+
 - The game is continued until a winner is announced:
 
         Sara has cast Holy Water Spring!
