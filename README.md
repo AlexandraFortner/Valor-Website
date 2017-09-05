@@ -111,3 +111,8 @@ ten different classes to play with:
 
         Alex: SURVIVED!
         Sara: SURVIVED!
+
+## Based on The Gladiators Assignment in:
+- https://github.com/BaseCampCoding/Gladiators-Dictionaries
+
+- Used with permission.
