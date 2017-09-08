@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block body %}
+    <body>
+        <h2>Menu</h2>
+        <p>
+   {% if attacker_name in [
+            'Barbarian', 'Noble', 'Cavalier', 'General', 'Valkyrie',
+            'Assassin', 'Dragonmaster'
+] %}
+       <p> What would you like to do?</p>
+       <select>
+            <option value='1'>Attack:      0 Rage Required.</option >
+            <option value='2'>Apothecarys Satchel:   10 Rage Required.</option >
+            <option value='3'>Pass:      0 Rage Required.</option >
+            <option value='4'>Pain Pack:           20 Rage Required.</option >
+            <option value='5'>Quit</option >
+       </select>
+    {% else %}
+        <p>What would you like to do?</p>
+        <select>
+            <option value='1'>Cast Spell:          0 Magic Required.</option >
+            <option value='2'>Heal:            10 Magic Required.</option >
+            <option value='3'>Pass:            0 Magic Required.</option >
+            <option value='4'>Pain Pack:           20 Magic Required.</option >
+            <option value='5'>Quit</option >
+        </select>
+    {% endif %}
+        <form action="/menu">
+            <input type="submit" value="Done" />
+        </form>
+    </body>
+    {% endblock %}
+</html>

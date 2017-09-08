@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block body %}
+<h3>Welcome to Valor</h3>
+<form action='menu'>
+    <h4>Player 1</h4>
+    <label for="name_1">Name:</label>
+    <input type="text" name="name_1" id="name_1" required>
+   <h4>Choose your character</h4>
+    <select name='character_1'> 
+        <option value='1'>Barbarian</option>
+        <option value='2'>Wizard</option>
+        <option value='3'>Bishop</option>
+        <option value='4'>Noble</option>
+        <option value='5'>Cavalier</option>
+        <option value='6'>General</option>
+        <option value='7'>Valkyrie</option>
+        <option value='8'>Assassin</option>
+        <option value='9'>Troubadour</option>
+        <option value='10'>Dragonmaster</option>
+    </select>
+    <h4>Player 2</h4>
+    <label for="name_2">Name:</label>
+    <input type="text" name="name_2" id="name_2" required>
+   <h4>Choose your character</h4>
+    <select name='character_2'> 
+        <option value='1'>Barbarian</option>
+        <option value='2'>Wizard</option>
+        <option value='3'>Bishop</option>
+        <option value='4'>Noble</option>
+        <option value='5'>Cavalier</option>
+        <option value='6'>General</option>
+        <option value='7'>Valkyrie</option>
+        <option value='8'>Assassin</option>
+        <option value='9'>Troubadour</option>
+        <option value='10'>Dragonmaster</option>
+    </select>
+    <form method="get" action="/menu">
+        <button type="submit">READY</button>
+    </form>
+</form>
+{% endblock %}
