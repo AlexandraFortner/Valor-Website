@@ -2,6 +2,18 @@ import random, colored
 from colored import stylize, fg
 
 
+class Game():
+    '''current state of the game'''
+
+    def set_up(self, Gladiator_1, Gladiator_2, turn, choose_name1,
+               choose_name2):
+        self.Gladiator_1 = Gladiator_1
+        self.Gladiator_2 = Gladiator_2
+        self.turn = turn
+        self.choose_name1 = choose_name1
+        self.choose_name2 = choose_name2
+
+
 class Player():
     """ Whoever is currently playing. """
 
@@ -54,7 +66,7 @@ class ClosePlayer(Player):
         self.damage_low = damage_low
         self.damage_high = damage_high
 
-    def inventory_heal(self):
+    def heal(self, choose_name):
         random_bag_heal = {
             'Bad Juju': 1,
             'Noku Noir': 5,
@@ -74,10 +86,10 @@ class ClosePlayer(Player):
                 self.health = min(100, healing_power + self.health)
                 self.rage = max(0, self.rage)
                 self.rage -= 10
-                return '\nYou look into your inventory to find {}. You heal {} point(s).\n'.format(
-                    healing_item, healing_power)
+                return '\n{} looks into the inventory to find {}.{} heals {} point(s).\n'.format(
+                    choose_name, healing_item, choose_name, healing_power)
 
-    def attack(self, defender, choose_name):
+    def attack(self, defender, choose_name, choose_name2):
         """
         - Each attack can hit normally or crit
         - Crit chance is the same as the attacker's rage (50 rage == 50% crit chance)
@@ -113,7 +125,7 @@ class FarPlayer(Player):
         self.damage_low = damage_low
         self.damage_high = damage_high
 
-    def magic(self, defender, choose_name, choose_name2):
+    def attack(self, defender, choose_name, choose_name2):
         number = self.rage
         magic_dictionary = {
             'Kaiju Blue Bath': -15,

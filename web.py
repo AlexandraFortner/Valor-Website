@@ -2,6 +2,8 @@ from flask import Flask, render_template, redirect, request
 import core
 app = Flask(__name__)
 
+game = core.Game()
+
 
 @app.route('/')
 def root():
@@ -44,37 +46,38 @@ def menu():
     choose_name = choose_name2
     Gladiator_1 = player_select(choice)
     Gladiator_2 = player_select(choice2)
-    if turn == 0:
-        attacker = Gladiator_1
-        defender = Gladiator_2
-        turn += 1
-        name = str(attacker.getName()) + ':'
-        choose_name = choose_name1
-        name_choose = choose_name2
-    elif turn == 1:
-        attacker = Gladiator_2
-        defender = Gladiator_1
-        turn = 0
-        name = str(attacker.getName()) + ':'
-        choose_name = choose_name2
-        name_choose = choose_name1
-        # attacker.special(defender, choose_name)
+    attacker = Gladiator_1
     if Gladiator_1 is None or Gladiator_2 is None or choose_name1 is None or choose_name2 is None:
         return redirect('/')
     else:
-        return render_template(
-            'menu.html',
-            Gladiator_1=Gladiator_1,
-            Gladiator_2=Gladiator_2,
-            turn=turn,
-            choose_name=choose_name,
-            choose_name1=choose_name1,
-            choose_name2=choose_name2,
-            attacker=attacker,
-            defender=defender,
-            name=name,
-            name_choose=name_choose,
-            attacker_name=attacker.getName())
+        game.set_up(Gladiator_1, Gladiator_2, turn, choose_name1, choose_name2)
+        return render_template('menu.html', attacker_name=attacker.getName())
+
+
+@app.route('/turn')
+def turn():
+    choice = request.args.get('choice')
+    if game.turn == 0:
+        attacker = game.Gladiator_1
+        defender = game.Gladiator_2
+        game.turn += 1
+        name = str(attacker.getName()) + ':'
+        choose_name = game.choose_name1
+        name_choose = game.choose_name2
+    elif game.turn == 1:
+        attacker = game.Gladiator_2
+        defender = game.Gladiator_1
+        game.turn = 0
+        name = str(attacker.getName()) + ':'
+        choose_name = game.choose_name2
+        name_choose = game.choose_name1
+    if choice == '1':
+        attacker.attack(defender, choose_name, name_choose)
+    elif choice == '2':
+        attacker.heal(choose_name)
+    elif choice == '4':
+        attacker.inventory_harm(defender)
+    return render_template('turn.html', attacker_name=attacker)
 
 
 # display_current_information(choose_name1, choose_name2, Gladiator_1,
