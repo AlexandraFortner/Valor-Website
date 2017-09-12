@@ -1,17 +1,41 @@
 {% extends "base.html" %}
 {% block body %}
-<h3>General</h3>
-<img src='static/pictures/GeneralValor.png'>
-<p><strong>General:</strong> Strong and unmoving, Generals command hoards of soldiers and perform
-            very well at yelling commands. They are usually dressed in scores of badges and medals.
-            They are rumored to move mountains if needed, and can fell a tree with one strike of
-            their weapon. Sometimes Generals go on long, lone journeys to find strength again,
-            in times of personal hardship, the length of which no one ever knows.
-            Natural leaders. Usually are very loud and have laugh lines.</p>
+<div class="container">
+    <div class="row">
+        <div class="six columns">
+        <img class="u-pull-right" src='static/pictures/NewGeneralSecond.png'>
+        </div>
 
-<br>
-            <p>
-            <strong>Name of Special:</strong> Piercing Blows<br />
-            <strong>Triggered:</strong> When health is under 20<br />
-            <strong>Effect:</strong> General\'s High Atk raised by 10 and the opponent loses 10 health.</p>
+        <div class="six columns">
+        <h3>General</h3>
+        <p><strong>General:</strong> Strong and unmoving, Generals command hoards of soldiers and perform
+                    very well at yelling commands. They are usually dressed in scores of badges and medals.
+                    They are rumored to move mountains if needed, and can fell a tree with one strike of
+                    their weapon. Sometimes Generals go on long, lone journeys to find strength again,
+                    in times of personal hardship, the length of which no one ever knows.
+                    Natural leaders. Usually are very loud and have laugh lines.</p>
+
+        <br>
+                    <p>
+                    <strong>Name of Special:</strong> Piercing Blows<br />
+                    <strong>Triggered:</strong> When health is under 20<br />
+                    <strong>Effect:</strong> General's High Atk raised by 10 and the opponent loses 10 health.</p>
+
+        </div>
+        <div class="row" id="outer">
+                <form action='/cavalier'>
+                    <div class="two columns"><button class="button" style="vertical-align:middle"><span>Back </span></button>
+                    </div>
+                </form>
+                <form action='/'>
+                    <div class="two columns"><button class="button" style="vertical-align:middle"><span>Home </span></button>
+                    </div>
+                </form>
+                <form action='/valkyrie'>
+                    <div class="two columns"><button class="button" style="vertical-align:middle"><span>Next </span></button>
+                    </div>
+                </form>
+            </div>
+    </div>
+</div>
 {% endblock %}

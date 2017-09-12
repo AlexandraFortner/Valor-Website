@@ -1,19 +1,40 @@
 {% extends "base.html" %}
 {% block body %}
-<h3>Wizard</h3>
-<img src='static/pictures/WizardValor.png'>
-<body>
-<p><strong>Wizard:</strong> Drawing on the subtle weave of magic that permeates the cosmos, 
-            wizards cast spells from elements such as explosive fire, arcing lightning and freezing rain.
-            Their wands appear in their hands whenvever needed, and draw power from the strength of
-            the caster's soul. Old Wizards are revered and respected as high members of society.
-            Curious and wise.</p>
+<div class="container">
+    <div class="row">
+        <div class="six columns">
+        <img class="u-pull-right" src='static/pictures/WizardValor.png'>
+        </div>
 
-<br>
+        <div class="six columns">
+        <h3>Wizard</h3>
+        <p><strong>Wizard:</strong> Drawing on the subtle weave of magic that permeates the cosmos, 
+                    wizards cast spells from elements such as explosive fire, arcing lightning and freezing rain.
+                    Their wands appear in their hands whenvever needed, and draw power from the strength of
+                    the caster's soul. Old Wizards are revered and respected as high members of society.
+                    Curious and wise.</p>
 
-            <p>
-            <strong>Name of Special:</strong> Aligned Skies<br />
-            <strong>Triggered:</strong> When Health is under 20<br />
-            <strong>Effect:</strong> Wizard's opponent is hurt by 15 points.</p>
-</body>
+        <br>
+
+                    <p>
+                    <strong>Name of Special:</strong> Aligned Skies<br />
+                    <strong>Triggered:</strong> When Health is under 20<br />
+                    <strong>Effect:</strong> Wizard's opponent is hurt by 15 points.</p>
+        </div>
+        <div class="row" id="outer">
+                <form action='/barbarian'>
+                    <div class="two columns"><button class="button" style="vertical-align:middle"><span>Back </span></button>
+                    </div>
+                </form>
+                <form action='/'>
+                    <div class="two columns"><button class="button" style="vertical-align:middle"><span>Home </span></button>
+                    </div>
+                </form>
+                <form action='/bishop'>
+                    <div class="two columns"><button class="button" style="vertical-align:middle"><span>Next </span></button>
+                    </div>
+                </form>
+            </div>
+    </div>
+</div>
 {% endblock %}

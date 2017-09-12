@@ -1,24 +1,33 @@
 {% extends "base.html" %}
 {% block body %}
-<h3>Welcome to Valor</h3>
+<!--<center><h3>Welcome to Valor!</h3></center>-->
 
-<div class=descriptions>
-    <p>Descriptions:&emsp;
-    <a href='barbarian'>Barbarian</a>&emsp;
-    <a href='wizard'>Wizard</a>&emsp;
-    <a href='bishop'>Bishop</a>&emsp;
-    <a href='noble'>Noble</a>&emsp;
-    <a href='cavalier'>Cavalier</a>&emsp;
-    <a href='general'>General</a>&emsp;
-    <a href='valkyrie'>Valkyrie</a>&emsp;
-    <a href='assassin'>Assassin</a>&emsp;
-    <a href='troubadour'>Troubadour</a>&emsp;
-    <a href='dragonmaster'>Dragonmaster</a>
-    </p>
-</div>
+<div class="container">
+    <div class="row">
+        <div class="six columns">
+            <div class=descriptions>
+                <p>
+                <strong>Descriptions:&emsp;</strong>
+                </div>
+
+                <div class="six columns">
+                <a href='barbarian'>Barbarian</a>&emsp;
+                <a href='wizard'>Wizard</a>&emsp;
+                <a href='bishop'>Bishop</a>&emsp;
+                <a href='noble'>Noble</a>&emsp;
+                <a href='cavalier'>Cavalier</a>&emsp;
+                <a href='general'>General</a>&emsp;
+                <a href='valkyrie'>Valkyrie</a>&emsp;
+                <a href='assassin'>Assassin</a>&emsp;
+                <a href='troubadour'>Troubadour</a>&emsp;
+                <a href='dragonmaster'>Dragonmaster</a>
+                </p>
+            </div>
+        </div>
+    </div>
 <hr>
 <form action='menu'>
-    <h4>Player 1</h4>
+    <h4><strong>Player 1!</strong></h4>
     <label for="name_1">Name:</label>
     <input type="text" name="name_1" id="name_1" required>
    <label for='character_1'>Class:</label>
@@ -35,7 +44,7 @@
         <option value='10'>Dragonmaster</option>
     </select>
     <hr>
-    <h4>Player 2</h4>
+    <h4><strong>Player 2!</strong></h4>
     <label for="name_2">Name:</label>
     <input type="text" name="name_2" id="name_2" required>
    <label for='character_2'>Class:</label>
@@ -51,8 +60,10 @@
         <option value='9'>Troubadour</option>
         <option value='10'>Dragonmaster</option>
     </select>
+    <div class="row" id="outer">
     <form method="get" action="/menu">
-        <button type="submit">READY</button>
+        <div class="=seven columns"><button class="button" style="vertical-align:middle"><span>Go!</span></button>
+                    </div>
     </form>
 </form>
 {% endblock %}

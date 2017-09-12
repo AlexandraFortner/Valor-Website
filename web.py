@@ -128,7 +128,7 @@ def turn():
     elif choice == '2':
         phrase = attacker.heal(choose_name)
     elif choice == '3':
-        phrase = '{} has passed'.format(attacker)
+        phrase = '{} has passed'.format(attacker.getName())
     elif choice == '4':
         phrase = attacker.inventory_harm(defender)
     if game.Gladiator_1.health <= 0:
