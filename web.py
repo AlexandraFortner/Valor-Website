@@ -10,6 +10,56 @@ def root():
     return render_template('root.html')
 
 
+@app.route('/barbarian')
+def barbarian():
+    return render_template('barbarian.html')
+
+
+@app.route('/wizard')
+def wizard():
+    return render_template('wizard.html')
+
+
+@app.route('/bishop')
+def bishop():
+    return render_template('bishop.html')
+
+
+@app.route('/noble')
+def noble():
+    return render_template('noble.html')
+
+
+@app.route('/cavalier')
+def cavalier():
+    return render_template('cavalier.html')
+
+
+@app.route('/general')
+def general():
+    return render_template('general.html')
+
+
+@app.route('/valkyrie')
+def valkyrie():
+    return render_template('valkyrie.html')
+
+
+@app.route('/assassin')
+def assassin():
+    return render_template('assassin.html')
+
+
+@app.route('/troubadour')
+def troubadour():
+    return render_template('troubadour.html')
+
+
+@app.route('/dragonmaster')
+def dragonmaster():
+    return render_template('dragonmaster.html')
+
+
 def player_select(choice):
     if choice == '1':
         p = core.Barbarian(100, 0, 15, 20)
@@ -51,7 +101,8 @@ def menu():
         return redirect('/')
     else:
         game.set_up(Gladiator_1, Gladiator_2, turn, choose_name1, choose_name2)
-        return render_template('menu.html', attacker_name=attacker.getName())
+        return render_template(
+            'menu.html', attacker=attacker.getName(), game=game)
 
 
 @app.route('/turn')
@@ -71,17 +122,30 @@ def turn():
         name = str(attacker.getName()) + ':'
         choose_name = game.choose_name2
         name_choose = game.choose_name1
+    special = attacker.special(defender, choose_name)
     if choice == '1':
-        attacker.attack(defender, choose_name, name_choose)
+        phrase = attacker.attack(defender, name_choose, choose_name)
     elif choice == '2':
-        attacker.heal(choose_name)
+        phrase = attacker.heal(choose_name)
+    elif choice == '3':
+        phrase = '{} has passed'.format(attacker)
     elif choice == '4':
-        attacker.inventory_harm(defender)
-    return render_template('turn.html', attacker_name=attacker)
-
-
-# display_current_information(choose_name1, choose_name2, Gladiator_1,
-#                             Gladiator_2)
+        phrase = attacker.inventory_harm(defender)
+    if game.Gladiator_1.health <= 0:
+        winner = game.choose_name2
+        game.Gladiator_1.health = 0
+        return render_template('end.html', game=game, winner=winner)
+    elif game.Gladiator_2.health <= 0:
+        winner = game.choose_name1
+        game.Gladiator_2.health = 0
+        return render_template('end.html', game=game, winner=winner)
+    else:
+        return render_template(
+            'turn.html',
+            game=game,
+            attacker=attacker.getName(),
+            phrase=phrase,
+            special=special)
 
 
 def main():

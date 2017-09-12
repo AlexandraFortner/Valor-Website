@@ -1,4 +1,4 @@
-import random, core, sys, time, colored
+import core, sys, time, colored
 from termcolor import colored, cprint
 from colored import stylize, fg
 typing_speed = 17  #wpm
@@ -313,7 +313,7 @@ def description():
 
 def player_select_1():
     cprint(
-        '\nWelcome to Fire Emblem: Armada! A turn-based fighting/strategy game!',
+        '\nWelcome to Valor A turn-based fighting/strategy game!',
         'cyan',
         attrs=['bold'])
     cprint(

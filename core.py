@@ -211,11 +211,9 @@ class Barbarian(ClosePlayer):
             self.damage_low += 10
             # min(self.damage_low + 10, self.damage_high)
             self.damage_high += 15
-            print(
-                stylize(
-                    '\n-' + choose_name +
-                    ': "I\'m not done yet!"\n\nWarrior\'s Spirit Activates! Ghosts of past Barbarian\'s rise from the ground and bless Killer Axe!\nLow Atk raised 10 points and High Atk raised 15 points!\n',
-                    fg("dark_orange")))
+            return '\n-' + choose_name + ': "I\'m not done yet!"\n\nWarrior\'s Spirit Activates! Ghosts of past Barbarian\'s rise from the ground and bless Killer Axe!\nLow Atk raised 10 points and High Atk raised 15 points!\n'
+        else:
+            return ''
 
 
 class Wizard(FarPlayer):
@@ -232,13 +230,9 @@ class Wizard(FarPlayer):
         """If the Wizard's health is under 20, opponent is hurt 15 points."""
         if self.health <= 20:
             defender.health -= 15
-            print(
-                stylize(
-                    '\n-' + choose_name +
-                    ': "The skies have aligned!"\n\nAligned Skies is activated!\n'
-                    + choose_name +
-                    '\'s Wand naturally protects it\'s master!\n\nThe opponent lost 15 health!\n',
-                    fg("yellow_2")))
+            return '\n-' + choose_name + ': "The skies have aligned!"\n\nAligned Skies is activated!\n' + choose_name + '\'s Wand naturally protects it\'s master!\n\nThe opponent lost 15 health!\n'
+        else:
+            return ''
 
 
 class Bishop(FarPlayer):
@@ -256,12 +250,9 @@ class Bishop(FarPlayer):
         """If the Bishop's health is under 35, heal 15 points."""
         if self.health <= 35:
             self.health += 30
-            print(
-                stylize(
-                    '\n-' + choose_name +
-                    ': "God truly watches over me!"\n\nHoly Ground has activated!\n'
-                    + choose_name + ' healed 15 points!\n',
-                    fg("dark_magenta_2")))
+            return '\n-' + choose_name + ': "God truly watches over me!"\n\nHoly Ground has activated!\n' + choose_name + ' healed 15 points!\n'
+        else:
+            return ''
 
 
 class Noble(ClosePlayer):
@@ -280,14 +271,9 @@ class Noble(ClosePlayer):
         if self.health <= 25:
             self.rage += 5
             defender.health -= 10
-            print(
-                stylize(
-                    '\n-' + choose_name +
-                    ': "Heroes Never Die!"\n\nHigh Birth has activated!\n' +
-                    choose_name + '\'s retainer charges in and attacks!\n' +
-                    choose_name +
-                    '\'s Rage raised 5 points!\nThe opponent was dealt 10 damage!\n',
-                    fg("magenta")))
+            return '\n-' + choose_name + ': "Heroes Never Die!"\n\nHigh Birth has activated!\n' + choose_name + '\'s retainer charges in and attacks!\n' + choose_name + '\'s Rage raised 5 points!\nThe opponent was dealt 10 damage!\n'
+        else:
+            return ''
 
 
 class Cavalier(ClosePlayer):
@@ -306,13 +292,9 @@ class Cavalier(ClosePlayer):
         if self.health <= 30:
             self.health += 10
             self.rage += 10
-            print(
-                stylize(
-                    '\n-' + choose_name +
-                    ': "Lucky for me, I came prepared!"\n\nLucky Habits has activated!\n'
-                    + choose_name +
-                    ' looked into a first aid kit and healed 10 points, rage is increased by 10!\n',
-                    fg("deep_pink_3a")))
+            return '\n-' + choose_name + ': "Lucky for me, I came prepared!"\n\nLucky Habits has activated!\n' + choose_name + ' looked into a first aid kit and healed 10 points, rage is increased by 10!\n'
+        else:
+            return ''
 
 
 class General(ClosePlayer):
@@ -331,15 +313,9 @@ class General(ClosePlayer):
         if self.health <= 20:
             self.damage_high += 10
             defender.health -= 10
-            print(
-                stylize(
-                    '\n-' + choose_name +
-                    ': "I\'m through playing around!"\n\nPiercing Blows has activated!\n'
-                    + choose_name +
-                    ' reveals a hidden mace and swings it with deadly precision!\n'
-                    + choose_name +
-                    '\'s High Atk raised 10 points!\nThe opponent lost 10 health!\n',
-                    fg("dark_slate_gray_2")))
+            return '\n-' + choose_name + ': "I\'m through playing around!"\n\nPiercing Blows has activated!\n' + choose_name + ' reveals a hidden mace and swings it with deadly precision!\n' + choose_name + '\'s High Atk raised 10 points!\nThe opponent lost 10 health!\n'
+        else:
+            return ''
 
 
 class Valkyrie(ClosePlayer):
@@ -358,13 +334,9 @@ class Valkyrie(ClosePlayer):
         if self.health <= 30:
             self.rage += 10
             defender.health -= 5
-            print(
-                stylize(
-                    '\n-' + choose_name +
-                    ': "Now I\'m angry!"\n\nShrieking War Cry is activated!\n'
-                    + choose_name +
-                    '\'s Rage is raised 10 points!\nThe opponent lost 5 health!\n',
-                    fg("light_yellow")))
+            return '\n-' + choose_name + ': "Now I\'m angry!"\n\nShrieking War Cry is activated!\n' + choose_name + '\'s Rage is raised 10 points!\nThe opponent lost 5 health!\n'
+        else:
+            return ''
 
 
 class Assassin(ClosePlayer):
@@ -382,13 +354,9 @@ class Assassin(ClosePlayer):
         """If the Assassin's health is under 10, opponent is hurt by 20."""
         if self.health <= 10:
             defender.health -= 20
-            print(
-                stylize(
-                    '\n-' + choose_name +
-                    ': "Accept your fate."\n\nSwift Kill is activated!\n' +
-                    choose_name +
-                    '\'s Killing Edge shines brightly in the shadows!\nThe opponent lost 20 health!\n',
-                    fg("red_3a")))
+            return '\n-' + choose_name + ': "Accept your fate."\n\nSwift Kill is activated!\n' + choose_name + '\'s Killing Edge shines brightly in the shadows!\nThe opponent lost 20 health!\n'
+        else:
+            return ''
 
 
 class Troubadour(FarPlayer):
@@ -407,13 +375,9 @@ class Troubadour(FarPlayer):
         if self.health <= 25:
             self.damage_high += 10
             defender.health -= 10
-            print(
-                stylize(
-                    '\n-' + choose_name +
-                    ': "I\'m tired of being pushed around! This ends now!"\n\nSick Of It has activated!\n'
-                    + choose_name +
-                    '\'s High Atk raised 10 points!\nThe opponent lost 10 health!\n',
-                    fg("deep_sky_blue_2")))
+            return '\n-' + choose_name + ': "I\'m tired of being pushed around! This ends now!"\n\nSick Of It has activated!\n' + choose_name + '\'s High Atk raised 10 points!\nThe opponent lost 10 health!\n'
+        else:
+            return ''
 
 
 class Dragonmaster(ClosePlayer):
@@ -432,9 +396,6 @@ class Dragonmaster(ClosePlayer):
         if self.health <= 20:
             self.rage += 5
             defender.health -= 15
-            print(
-                '\n-' + choose_name +
-                ': "No retreat! No surrender!"\n\nSearing Spear is activated!\n'
-                + choose_name + '\'s dragon sets fire to the spear!\n' +
-                choose_name +
-                '\'s Rage is raised 5 points!\nThe opponent lost 15 health!\n')
+            return '\n-' + choose_name + ': "No retreat! No surrender!"\n\nSearing Spear is activated!\n' + choose_name + '\'s dragon sets fire to the spear!\n' + choose_name + '\'s Rage is raised 5 points!\nThe opponent lost 15 health!\n'
+        else:
+            return ''

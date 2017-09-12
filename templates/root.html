@@ -1,11 +1,27 @@
 {% extends "base.html" %}
 {% block body %}
 <h3>Welcome to Valor</h3>
+
+<div class=descriptions>
+    <p>Descriptions:&emsp;
+    <a href='barbarian'>Barbarian</a>&emsp;
+    <a href='wizard'>Wizard</a>&emsp;
+    <a href='bishop'>Bishop</a>&emsp;
+    <a href='noble'>Noble</a>&emsp;
+    <a href='cavalier'>Cavalier</a>&emsp;
+    <a href='general'>General</a>&emsp;
+    <a href='valkyrie'>Valkyrie</a>&emsp;
+    <a href='assassin'>Assassin</a>&emsp;
+    <a href='troubadour'>Troubadour</a>&emsp;
+    <a href='dragonmaster'>Dragonmaster</a>
+    </p>
+</div>
+<hr>
 <form action='menu'>
     <h4>Player 1</h4>
     <label for="name_1">Name:</label>
     <input type="text" name="name_1" id="name_1" required>
-   <h4>Choose your character</h4>
+   <label for='character_1'>Class:</label>
     <select name='character_1'> 
         <option value='1'>Barbarian</option>
         <option value='2'>Wizard</option>
@@ -18,10 +34,11 @@
         <option value='9'>Troubadour</option>
         <option value='10'>Dragonmaster</option>
     </select>
+    <hr>
     <h4>Player 2</h4>
     <label for="name_2">Name:</label>
     <input type="text" name="name_2" id="name_2" required>
-   <h4>Choose your character</h4>
+   <label for='character_2'>Class:</label>
     <select name='character_2'> 
         <option value='1'>Barbarian</option>
         <option value='2'>Wizard</option>
