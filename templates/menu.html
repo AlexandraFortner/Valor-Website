@@ -1,10 +1,12 @@
 {% extends "base.html" %}
 {% block body %}
     <body>
-        <h2>Menu</h2>
-        <form action="/">
-            <input type="submit" value="Back to Character Selection">
-        </form>
+        <div class="row" id="outer">
+            <form action="/">
+                <div class="six columns"><button class="button" style="vertical-align:bottom-right"><span>Back</span></button>
+                        </div>
+            </form>
+        </div>
     <table>
         <tr>
             <th></th>
@@ -22,7 +24,7 @@
             <td>{{game.Gladiator_2.rage}}</td>
         </tr>
     </table>
-       <h2>{{game.choose_name1}} ||| Class: {{game.Gladiator_1.getName()}}:</h2>
+       <strong><h2>{{game.choose_name1}} ||| Class: {{game.Gladiator_1.getName()}}:</h2></strong>
            <p>What would you like to do?</p>
         <form action="/turn">
        {% if attacker in [
@@ -45,8 +47,11 @@
             <option value='5'>Quit</option >
         </select>
     {% endif %}
-            <input type="submit" value="Done" />
+        <div class="row" id="outer">
+            <div class="six columns"><button class="button" style="vertical-align:middle-right"><span>Go!</span></button>
+                            </div>
         </form>
+    </div>
     </body>
     {% endblock %}
 </html>
