@@ -102,7 +102,7 @@ def menu():
     else:
         game.set_up(Gladiator_1, Gladiator_2, turn, choose_name1, choose_name2)
         return render_template(
-            'menu.html', attacker=attacker.getName(), game=game)
+            'menu.html', attacker=Gladiator_1.getName(), game=game)
 
 
 @app.route('/turn')
@@ -112,14 +112,12 @@ def turn():
         attacker = game.Gladiator_1
         defender = game.Gladiator_2
         game.turn += 1
-        name = str(attacker.getName()) + ':'
         choose_name = game.choose_name1
         name_choose = game.choose_name2
     elif game.turn == 1:
         attacker = game.Gladiator_2
         defender = game.Gladiator_1
         game.turn = 0
-        name = str(attacker.getName()) + ':'
         choose_name = game.choose_name2
         name_choose = game.choose_name1
     special = attacker.special(defender, choose_name)
@@ -143,7 +141,7 @@ def turn():
         return render_template(
             'turn.html',
             game=game,
-            attacker=attacker.getName(),
+            attacker=defender.getName(),
             phrase=phrase,
             special=special)
 
