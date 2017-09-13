@@ -3,10 +3,14 @@
 In this turn-based strategy game, you can choose between
 ten different classes to play with, and fight against a friend!
 
-## Instructions:
+## Instructions for running the website:
 
 <li> Git clone</li>
 <li> run "python3 web.py"!</li>
+
+## Instructions for running the terminal version:
+<li>Git clone></li>
+<li>run "python3 shell.py"</li>
 
 ### Furthermore:
 

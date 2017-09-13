@@ -81,7 +81,7 @@ def menu(Gladiator_1, Gladiator_2, turn, choose_name, choose_name1,
             ]:
                 print(
                     stylize(
-                        attacker.attack(defender, name_choose),
+                        attacker.attack(defender, name_choose, choose_name2),
                         fg('royal_blue_1')))
                 if Gladiator_1.is_dead() == True:
                     display_current_information(Gladiator_1, Gladiator_2,
@@ -93,7 +93,7 @@ def menu(Gladiator_1, Gladiator_2, turn, choose_name, choose_name1,
                     quit()
             else:
                 cprint(
-                    attacker.magic(defender, name_choose, choose_name),
+                    attacker.attack(defender, name_choose, choose_name),
                     'green')
                 if Gladiator_1.is_dead() == True:
                     display_current_information(Gladiator_1, Gladiator_2,
