@@ -183,12 +183,14 @@ html {
     font-size: 62.5%;
 }
 body {
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     font-size: 1.5em; /* currently ems cause chrome bug misinterpreting rems on body element */
     line-height: 1.6;
     font-weight: 400;
     font-family: 'Raleway', 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial,
         sans-serif;
-    color: rgb(54, 50, 50);
+    color: rgb(0, 0, 0);
 }
 
 /* Typography
