@@ -38,17 +38,17 @@
             <option value='5'>Quit</option >
         </select> {% endif %}
             <div class="row" id="outer">
-                <form action="/">
+                <!-- <form action="/">
                     <div class="six columns"><button class="button" style="vertical-align:bottom-right"><span>Back</span></button>
                     </div>
-                </form>
+                </form> -->
+                <center>
+                    <form action="/turn">
+                        <div class="twelve columns"><button class="button" style="vertical-align:middle-right"><span>Go!</span></button>
+                        </div>
+                    </form>
             </div>
-            <div class="row" id="outer">
-                <form action="/turn">
-                    <div class="six columns"><button class="button" style="vertical-align:middle-right"><span>Go!</span></button>
-                    </div>
-                </form>
-            </div>
+            </center>
     </body>
 </center>
 {% endblock %}

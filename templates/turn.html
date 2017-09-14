@@ -4,9 +4,13 @@
 
     <body>
         <class='right'>
-            <p>{{phrase}}</p>
-            </class>
-            <p>{{special}}</p>
+            <float: left>
+                <p>{{phrase}}</p>
+                </class>
+                <class='right'>
+                    <p>{{special}}</p>
+                </class='right'>
+            </float: left>
             <table>
                 <tr>
                     <th></th>
@@ -26,9 +30,9 @@
             </table>
 
             {% if game.turn == 0 %}
-            <h2>{{game.choose_name1}}:</h2>
+            <h2>{{game.choose_name1}} ||| {{game.Gladiator_1.getName()}}:</h2>
             {% else %}
-            <h2>{{game.choose_name2}}:</h2>
+            <h2>{{game.choose_name2}} ||| {{game.Gladiator_2.getName()}}:</h2>
             {% endif %}
 
             <form action="/turn">
@@ -51,17 +55,17 @@
         </select> {% endif %}
 
                 <div class="row" id="outer">
-                    <form action="/turn">
-                        <div class="six columns"><button class="button" style="vertical-align:middle-right"><span>Go!</span></button>
-                        </div>
-                    </form>
+                    <!-- <form action="/">
+                <div class="six columns"><button class="button" style="vertical-align:bottom-right"><span>Back</span></button>
                 </div>
-                <div class="row" id="outer">
-                    <form action="/">
-                        <div class="six columns"><button class="button" style="vertical-align:bottom-right"><span>Back</span></button>
-                        </div>
-                    </form>
+            </form> -->
+                    <center>
+                        <form action="/turn">
+                            <div class="twelve columns"><button class="button" style="vertical-align:middle-right"><span>Go!</span></button>
+                            </div>
+                        </form>
                 </div>
+                </center>
     </body>
 </center>
 {% endblock %}

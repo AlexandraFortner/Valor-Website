@@ -1,70 +1,94 @@
-{% extends "base.html" %}
-{% block body %}
+{% extends "base.html" %} {% block body %}
 <!--<center><h3>Welcome to Valor!</h3></center>-->
 
 <div class="container">
     <div class="row">
         <div class="eight columns">
-            <table align="right"><div class=descriptions>
-                <p>
-                <strong>Descriptions:&emsp;</strong>
+            <table align="left">
+                <div class=descriptions>
+                    <p>
+                        <h6><strong>Descriptions:&emsp;</strong></h6>
                 </div>
 
-                <div class="six columns">
-                <a href='barbarian'>Barbarian</a>&emsp;
-                <a href='wizard'>Wizard</a>&emsp;
-                <a href='bishop'>Bishop</a>&emsp;
-                <a href='noble'>Noble</a>&emsp;
-                <a href='cavalier'>Cavalier</a>&emsp;
-                <a href='general'>General</a>&emsp;
-                <a href='valkyrie'>Valkyrie</a>&emsp;
-                <a href='assassin'>Assassin</a>&emsp;
-                <a href='troubadour'>Troubadour</a>&emsp;
-                <a href='dragonmaster'>Dragonmaster</a>
-                </p>
-            </div>
-        </div></table align="right">
+                <div class="ten columns">
+                    <a href='barbarian'>Barbarian</a>&emsp;
+                    <a href='wizard'>Wizard</a>&emsp;
+                    <a href='bishop'>Bishop</a>&emsp;
+                    <a href='noble'>Noble</a>&emsp;
+                    <a href='cavalier'>Cavalier</a>&emsp;
+                    <a href='general'>General</a>&emsp;
+                    <a href='valkyrie'>Valkyrie</a>&emsp;
+                    <a href='assassin'>Assassin</a>&emsp;
+                    <a href='troubadour'>Troubadour</a>&emsp;
+                    <a href='dragonmaster'>Dragonmaster</a>
+                    </p>
+                </div>
+        </div>
+        </table align="left">
     </div>
 </div>
 <hr>
-<form action='menu'>
-    <h4><strong>Player 1!</strong></h4>
-    <label for="name_1">Name:</label>
-    <input type="text" name="name_1" id="name_1" required>
-   <label for='character_1'>Class:</label>
-    <select name='character_1'> 
-        <option value='1'>Barbarian</option>
-        <option value='2'>Wizard</option>
-        <option value='3'>Bishop</option>
-        <option value='4'>Noble</option>
-        <option value='5'>Cavalier</option>
-        <option value='6'>General</option>
-        <option value='7'>Valkyrie</option>
-        <option value='8'>Assassin</option>
-        <option value='9'>Troubadour</option>
-        <option value='10'>Dragonmaster</option>
+<!-- <div class='container'>
+    <div class='row'>
+        <div class="six columns">
+            <table align="right"> -->
+<div class="row" id="outer">
+    <div id='wide'>
+        <form action='menu'>
+            <h4><strong>Player 1!</strong></h4>
+        </form>
+    </div>
+    <div id='narrow'>
+        <h4><strong>Player 2!</strong></h4>
+        <!-- </table> -->
+    </div>
+</div>
+<!-- </div>
+</div> -->
+<div class="row" id="outer">
+    <div id='wide'>
+        <label for="name_1">Name:</label>
+        <input type="text" name="name_1" id="name_1" required>
+        <label for='character_1'>Class:</label>
+        <select name='character_1'> 
+                <option value='1'>Barbarian</option>
+                <option value='2'>Wizard</option>
+                <option value='3'>Bishop</option>
+                <option value='4'>Noble</option>
+                <option value='5'>Cavalier</option>
+                <option value='6'>General</option>
+                <option value='7'>Valkyrie</option>
+                <option value='8'>Assassin</option>
+                <option value='9'>Troubadour</option>
+                <option value='10'>Dragonmaster</option>
     </select>
-    <hr>
-    <h4><strong>Player 2!</strong></h4>
-    <label for="name_2">Name:</label>
-    <input type="text" name="name_2" id="name_2" required>
-   <label for='character_2'>Class:</label>
-    <select name='character_2'> 
-        <option value='1'>Barbarian</option>
-        <option value='2'>Wizard</option>
-        <option value='3'>Bishop</option>
-        <option value='4'>Noble</option>
-        <option value='5'>Cavalier</option>
-        <option value='6'>General</option>
-        <option value='7'>Valkyrie</option>
-        <option value='8'>Assassin</option>
-        <option value='9'>Troubadour</option>
-        <option value='10'>Dragonmaster</option>
-    </select>
-    <div class="row" id="outer">
-    <form method="get" action="/menu">
-        <div class="=seven columns"><button class="button" style="vertical-align:middle"><span>Go!</span></button>
-                    </div>
+    </div>
+
+    <div id='narrow'>
+
+        <label for="name_2">Name:</label>
+        <input type="text" name="name_2" id="name_2" required>
+        <label for='character_2'>Class:</label>
+        <select name='character_2'> 
+                        <option value='1'>Barbarian</option>
+                        <option value='2'>Wizard</option>
+                        <option value='3'>Bishop</option>
+                        <option value='4'>Noble</option>
+                        <option value='5'>Cavalier</option>
+                        <option value='6'>General</option>
+                        <option value='7'>Valkyrie</option>
+                        <option value='8'>Assassin</option>
+                        <option value='9'>Troubadour</option>
+                        <option value='10'>Dragonmaster</option>
+                    </select>
+    </div>
+</div>
+<div class="row" id="outer">
+    <center>
+        <form method="get" action="/menu">
+            <div class="=seven columns"><button class="button" style="vertical-align:middle"><span>Go!</span></button>
+            </div>
+        </form>
+    </center>
     </form>
-</form>
-{% endblock %}
+    {% endblock %}

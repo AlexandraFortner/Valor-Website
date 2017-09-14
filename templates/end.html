@@ -1,23 +1,26 @@
 {% extends "base.html" %} {% block body %}
-<h2>Congratulations, {{winner}}!</h2>
-<table>
-    <tr>
-        <th></th>
-        <th scope='col'>Health</th>
-        <th scope='col'>Rage</th>
-    </tr>
-    <tr>
-        <th scope='row'>{{game.choose_name1}}:</th>
-        <td>{{game.Gladiator_1.health}}</td>
-        <td>{{game.Gladiator_1.rage}}</td>
-    </tr>
-    <tr>
-        <th scope='row'>{{game.choose_name2}}:</th>
-        <td>{{game.Gladiator_2.health}}</td>
-        <td>{{game.Gladiator_2.rage}}</td>
-    </tr>
-</table>
-<form action='/'>
-    <div class="six columns"><button class="button" style="vertical-align:bottom-right"><span>Back</span></button>
-    </div </form>
-    {% endblock %}
+<center>
+    <h2>Congratulations, {{winner}}!<br> You won the game! </br>
+    </h2>
+    <table>
+        <tr>
+            <th></th>
+            <th scope='col'>Health</th>
+            <th scope='col'>Rage</th>
+        </tr>
+        <tr>
+            <th scope='row'>{{game.choose_name1}}:</th>
+            <td>{{game.Gladiator_1.health}}</td>
+            <td>{{game.Gladiator_1.rage}}</td>
+        </tr>
+        <tr>
+            <th scope='row'>{{game.choose_name2}}:</th>
+            <td>{{game.Gladiator_2.health}}</td>
+            <td>{{game.Gladiator_2.rage}}</td>
+        </tr>
+    </table>
+    <form action='/'>
+        <div class="twelve columns"><button class="button" style="vertical-align:bottom-right"><span>Back</span></button>
+        </div </form>
+</center>
+{% endblock %}
