@@ -1,39 +1,36 @@
-{% extends "base.html" %}
-{% block body %}
+{% extends "base.html" %} {% block body %}
 <br>
 <br>
 <div class="container">
     <div class="row">
         <div class="six columns">
-        <img class="u-pull-left" src='static/pictures/Barbarian.png' title="Barbarian: 'Carolus'.">
+            <img class="u-pull-left" src='static/pictures/NewBarbarian.gif' title="Barbarian: 'Carolus'.">
         </div>
 
         <div class="six columns">
-        <h3>Barbarian</h3>
-        <p><strong>Barbarian:</strong> While not known for their etiquette or intelligence, Barbarians
-                        are incredibly strong, can take damage well, and fight for those
-                        who cannot fight for themselves. They tend to favor "Killer Axes" that sometimes, when
-                        outnumbered or outmatched, allow them to call upon deceased warriors to strengthen the
-                        silver and sharpen the bit.
-                        Brash and well-liked, but easily tricked. Gentle Giants.</p>
+            <h3>Barbarian</h3>
+            <p><strong>Barbarian:</strong> While not known for their etiquette or intelligence, Barbarians are incredibly strong,
+                can take damage well, and fight for those who cannot fight for themselves. They tend to favor "Killer Axes"
+                that sometimes, when outnumbered or outmatched, allow them to call upon deceased warriors to strengthen the
+                silver and sharpen the bit. Brash and well-liked, but easily tricked. Gentle Giants.</p>
 
-        <br>
-                        <p>
-                        <strong>Name of Special:</strong> Warrior's Spirit<br />
-                        <strong>Triggered:</strong> When Health is under 30<br />
-                        <strong>Effect:</strong> Low Atk is raised 10 points and High Atk is raised 15 points.</p>
+            <br>
+            <p>
+                <strong>Name of Special:</strong> Warrior's Spirit<br />
+                <strong>Triggered:</strong> When Health is under 30<br />
+                <strong>Effect:</strong> Low Atk is raised 10 points and High Atk is raised 15 points.</p>
         </div>
     </div>
     <div class="row" id="outer">
-                <form action='/'>
-                    <div class="two columns"><button class="button" style="vertical-align:middle"><span>Home </span></button>
-                    </div>
-                </form>
-                <form action='/wizard'>
-                    <div class="two columns"><button class="button" style="vertical-align:middle"><span>Next </span></button>
-                    </div>
-                </form>
+        <form action='/'>
+            <div class="two columns"><button class="button" style="vertical-align:middle"><span>Home </span></button>
             </div>
+        </form>
+        <form action='/wizard'>
+            <div class="two columns"><button class="button" style="vertical-align:middle"><span>Next </span></button>
+            </div>
+        </form>
+    </div>
 </div>
 
 {% endblock %}

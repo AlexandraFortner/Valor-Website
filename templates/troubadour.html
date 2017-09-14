@@ -1,41 +1,39 @@
-{% extends "base.html" %}
-{% block body %}
+{% extends "base.html" %} {% block body %}
 <div class="container">
     <div class="row">
         <div class="six columns">
-        <img class="u-pull-left" src='static/pictures/TroubadourStaff.gif-c200' title="Troubadour: 'Priscilla'.">
+            <img class="u-pull-right" src='static/pictures/TroubadourStaff.gif-c200' title="Troubadour: 'Priscilla'.">
         </div>
 
         <div class="six columns">
-        <h3>Troubadour</h3>
-        <p><strong>Troubadour:</strong> A horse-mounted magical class that have pure hearts and clear minds.
-                    Their wistful gestures and warm eyes are often underestimated, and quite
-                    wrongfully so. Behind their calm facade, burns the fire of an inner warrior wronged
-                    too many times. With sharp tongues and earth-shattering magic, they are often commended
-                    for their intelligence and generosity, as well as their battle prowess. Are very compatible
-                    with Barbarians.</p>
+            <h3>Troubadour</h3>
+            <p><strong>Troubadour:</strong> A horse-mounted magical class that have pure hearts and clear minds. Their wistful
+                gestures and warm eyes are often underestimated, and quite wrongfully so. Behind their calm facade, burns
+                the fire of an inner warrior wronged too many times. With sharp tongues and earth-shattering magic, they
+                are often commended for their intelligence and generosity, as well as their battle prowess. Are very compatible
+                with Barbarians.</p>
 
-        <br>
-                    <p>
-                    <strong>Name of Special:</strong> Sick Of It<br />
-                    <strong>Triggered:</strong> When health is under 25<br />
-                    <strong>Effect:</strong> Troubadour's High Atk is raised by 10 and opponent is hurt by 10 points.</p>
+            <br>
+            <p>
+                <strong>Name of Special:</strong> Sick Of It<br />
+                <strong>Triggered:</strong> When health is under 25<br />
+                <strong>Effect:</strong> Troubadour's High Atk is raised by 10 and opponent is hurt by 10 points.</p>
 
         </div>
         <div class="row" id="outer">
-                <form action='/assassin'>
-                    <div class="two columns"><button class="button" style="vertical-align:middle"><span>Back </span></button>
-                    </div>
-                </form>
-                <form action='/'>
-                    <div class="two columns"><button class="button" style="vertical-align:middle"><span>Home </span></button>
-                    </div>
-                </form>
-                <form action='/dragonmaster'>
-                    <div class="two columns"><button class="button" style="vertical-align:middle"><span>Next </span></button>
-                    </div>
-                </form>
-            </div>
+            <form action='/assassin'>
+                <div class="two columns"><button class="button" style="vertical-align:middle"><span>Back </span></button>
+                </div>
+            </form>
+            <form action='/'>
+                <div class="two columns"><button class="button" style="vertical-align:middle"><span>Home </span></button>
+                </div>
+            </form>
+            <form action='/dragonmaster'>
+                <div class="two columns"><button class="button" style="vertical-align:middle"><span>Next </span></button>
+                </div>
+            </form>
+        </div>
     </div>
 </div>
 {% endblock %}
