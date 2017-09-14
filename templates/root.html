@@ -32,25 +32,24 @@
     <div class='row'>
         <div class="six columns">
             <table align="right"> -->
-<div class="row" id="outer">
-    <div id='wide'>
-        <form action='menu'>
+<form method="get" action="/menu">
+    <div class="row" id="outer">
+        <div id='wide'>
             <h4><strong>Player 1!</strong></h4>
-        </form>
+        </div>
+        <div id='narrow'>
+            <h4><strong>Player 2!</strong></h4>
+            <!-- </table> -->
+        </div>
     </div>
-    <div id='narrow'>
-        <h4><strong>Player 2!</strong></h4>
-        <!-- </table> -->
-    </div>
-</div>
-<!-- </div>
+    <!-- </div>
 </div> -->
-<div class="row" id="outer">
-    <div id='wide'>
-        <label for="name_1">Name:</label>
-        <input type="text" name="name_1" id="name_1" required>
-        <label for='character_1'>Class:</label>
-        <select name='character_1'> 
+    <div class="row" id="outer">
+        <div id='wide'>
+            <label for="name_1">Name:</label>
+            <input type="text" name="name_1" id="name_1" required>
+            <label for='character_1'>Class:</label>
+            <select name='character_1'> 
                 <option value='1'>Barbarian</option>
                 <option value='2'>Wizard</option>
                 <option value='3'>Bishop</option>
@@ -62,14 +61,14 @@
                 <option value='9'>Troubadour</option>
                 <option value='10'>Dragonmaster</option>
     </select>
-    </div>
+        </div>
 
-    <div id='narrow'>
+        <div id='narrow'>
 
-        <label for="name_2">Name:</label>
-        <input type="text" name="name_2" id="name_2" required>
-        <label for='character_2'>Class:</label>
-        <select name='character_2'> 
+            <label for="name_2">Name:</label>
+            <input type="text" name="name_2" id="name_2" required>
+            <label for='character_2'>Class:</label>
+            <select name='character_2'> 
                         <option value='1'>Barbarian</option>
                         <option value='2'>Wizard</option>
                         <option value='3'>Bishop</option>
@@ -81,14 +80,13 @@
                         <option value='9'>Troubadour</option>
                         <option value='10'>Dragonmaster</option>
                     </select>
-        <center>
-            <div class="row" id="outer">
-                <form method="get" action="/menu">
+            <center>
+                <div class="row" id="outer">
                     <div class="=seven columns"><button type='submit' class="button" style="vertical-align:middle"><span>Go!</span></button>
-                </form>
-                </div>
-        </center>
+                    </div>
+            </center>
+            </div>
         </div>
-    </div>
+</form>
 
-    {% endblock %}
+{% endblock %}
