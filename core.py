@@ -134,26 +134,26 @@ class FarPlayer(Player):
             'Ground Pound': 11,
             'Water Cannon': 14,
             'Undead Underground': 16,
-            'Vine Whip': 10,
+            'Ghostly Screams': 10,
             'Sunshine\'s Rays': 20,
             'Bad Luck Bang': 5,
             'Good Fortune': 20,
             'Gastly Grimoire': 17,
-            'Blessed Brigamine': 18
+            'Blessed Protection': 18
         }
         critical_magic_dictionary = {
             'Kaiju Blue Spa': -30,
-            'Bring About The Fire Rain': 30,
+            'Gates Of Hell': 30,
             'Wasting Winds Of The Waker': 33,
             'Shifting Pangea Peril': 29,
-            'Hurricane Of TerrorTears': 32,
+            'Hurricane Of Terror': 32,
             'Paralyzing AkaiEyes': 34,
-            'Poison Ivy Grave': 28,
+            'Shrieking Grave': 28,
             'Scorching Sunburst': 48,
             'Unlucky Eulogy': 14,
             'Luck Of The Chinese New Year': 49,
             'Murderous Matoia': 35,
-            'Holy Water Spring': 36
+            'Holy Shield Bash': 36
         }
 
         if number < random.randint(0, 100):

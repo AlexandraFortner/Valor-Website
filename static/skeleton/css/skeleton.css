@@ -326,7 +326,7 @@ input[type="button"] {*/
     right: 0;
 }
 
-/*.outer
+/* .outer
 {
     width:100%;
     text-align: center;
@@ -517,6 +517,7 @@ form {
     float: right;
     width: 350px;
 }
+
 /* Misc
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 hr {
