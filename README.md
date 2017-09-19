@@ -21,3 +21,5 @@ HTML by Sara Hester.
 CSS and Program by Alexandra Fortner.
 
 Based on https://github.com/AlexandraFortner/Valor.
+
+I do not own Fire Emblem's sprites or characters that I have used in this program.
