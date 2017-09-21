@@ -518,6 +518,18 @@ form {
     width: 350px;
 }
 
+.bottom-left {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}
+
+.bottom-right {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+}
+
 /* Misc
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 hr {
